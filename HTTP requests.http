@@ -1,0 +1,48 @@
+#Token admin c915a93868b3e3eb5a0c28b9cacd804cd6fc3582
+#Token user1 5f51b3d9f7d39c1efa3bcea31f46eb09d4ca2d62
+#Token user2 3c2ac0e46e91580751213c5d553452b814479520
+
+GET http://localhost:8000/api/advertisements/
+Content-Type: application/json
+
+###
+
+GET http://localhost:8000/api/advertisements/
+Content-Type: application/json
+Authorization: Token 5f51b3d9f7d39c1efa3bcea31f46eb09d4ca2d62
+
+###
+
+GET http://localhost:8000/api/advertisements/?status=CLOSED
+Content-Type: application/json
+
+###
+
+GET http://localhost:8000/api/advertisements/?created_at_after=2020-12-31
+Content-Type: application/json
+
+###
+
+POST http://localhost:8000/api/advertisements/
+Content-Type: application/json
+Authorization: Token 5f51b3d9f7d39c1efa3bcea31f46eb09d4ca2d62
+
+{
+    "title": "Продаю пылесос"
+}
+
+###
+
+DELETE http://localhost:8000/api/advertisements/10/
+Content-Type: application/json
+Authorization: Token 3c2ac0e46e91580751213c5d553452b814479520
+
+###
+
+PATCH http://localhost:8000/api/advertisements/11/
+Content-Type: application/json
+Authorization: Token 3c2ac0e46e91580751213c5d553452b814479520
+
+{
+    "status": "OPEN"
+}
